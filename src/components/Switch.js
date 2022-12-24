@@ -1,7 +1,7 @@
 import {useState} from 'react'
 
-function Switch() {
-  const [active, setActive] = useState(false)
+function Switch({ initial }) {
+  const [active, setActive] = useState(initial)
 
   const outerDivStyles = {
     width: "700px",
@@ -22,8 +22,8 @@ function Switch() {
   }
 
   return (
-    <div style={outerDivStyles} onClick={() => setActive(!active)}>
-      <div style={innerDivStyles}>{active ? "ON" : "OFF" }</div>
+    <div className="switch-container" style={outerDivStyles} onClick={() => setActive(!active)}>
+      <div className="switch-label" style={innerDivStyles}>{active ? "ON" : "OFF" }</div>
     </div>
   );
 }
